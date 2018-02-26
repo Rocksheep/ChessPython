@@ -12,7 +12,7 @@ class Bishop(Piece):
         target_col = ord(move[0]) - ord('a')
         target_row = int(move[1]) - 1
 
-        d_x = target_col - col
-        d_y = target_row - row
+        d_x = abs(target_col - col)
+        d_y = abs(target_row - row)
 
-        return abs(d_x / d_y) == 1
+        return d_x == d_y

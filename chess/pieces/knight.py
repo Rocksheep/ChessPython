@@ -10,13 +10,10 @@ class Knight(Piece):
         target_col = ord(move[0]) - ord('a')
         target_row = int(move[1]) - 1
 
-        d_x = target_col - col
-        d_y = target_row - row
+        d_x = abs(target_col - col)
+        d_y = abs(target_row - row)
 
-        if d_x == 0 or d_y == 0:
-            return False
-
-        if (d_x / d_y == 0.5 and d_y / d_x == 2) or (d_x / d_y == 2 and d_y / d_x == 0.5):
+        if (d_x == 1 and d_y == 2) or (d_x == 2 and d_y == 1):
             return True
 
         return False
