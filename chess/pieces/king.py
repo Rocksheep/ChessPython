@@ -1,9 +1,7 @@
-import math
-
 from chess.pieces.piece import Piece
 
 
-class Bishop(Piece):
+class King(Piece):
 
     def is_valid_move(self, origin, destination):
         col = ord(origin[0]) - ord('a')
@@ -15,7 +13,7 @@ class Bishop(Piece):
         d_x = abs(target_col - col)
         d_y = abs(target_row - row)
 
-        return d_x == d_y
+        return 0 <= d_x <= 1 and 0 <= d_y <= 1
 
     def __str__(self):
-        return '\u2657' if self.color == 'white' else '\u265D'
+        return '\u2654' if self.color == 'white' else '\u265A'
