@@ -15,8 +15,8 @@ class BoardPrinter:
         for y in range(self.board.height):
             board_string += str(self.board.height - y) + ' '
             for x in range(self.board.width):
-                if self.board.squares[y][x] is not None:
-                    board_string += str(self.board.squares[y][x]) if counter % 2 == 0 else str(self.board.squares[y][x])
+                if self.board.tiles[y][x].is_not_empty():
+                    board_string += str(self.board.tiles[y][x].piece) if counter % 2 == 0 else str(self.board.tiles[y][x].piece)
                 else:
                     board_string += ' ' if counter % 2 == 0 else '\u2588'
                 counter += 1

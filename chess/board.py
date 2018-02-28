@@ -1,3 +1,4 @@
+from chess.Tile import Tile
 from chess.pieces.bishop import Bishop
 from chess.pieces.king import King
 from chess.pieces.knight import Knight
@@ -10,35 +11,35 @@ class Board:
     def __init__(self):
         self.width = 8
         self.height = 8
-        self.squares = []
+        self.tiles = []
         for row in range(self.height):
-            self.squares.append([])
+            self.tiles.append([])
             for square in range(self.width):
-                self.squares[row].append(None)
+                self.tiles[row].append(Tile(None))
 
         self._place_pieces()
 
     def _place_pieces(self):
-        self.squares[0][0] = Rook('black')
-        self.squares[0][1] = Knight('black')
-        self.squares[0][2] = Bishop('black')
-        self.squares[0][3] = Queen('black')
-        self.squares[0][4] = King('black')
-        self.squares[0][5] = Bishop('black')
-        self.squares[0][6] = Knight('black')
-        self.squares[0][7] = Rook('black')
+        self.tiles[0][0].piece = Rook('black')
+        self.tiles[0][1].piece = Knight('black')
+        self.tiles[0][2].piece = Bishop('black')
+        self.tiles[0][3].piece = Queen('black')
+        self.tiles[0][4].piece = King('black')
+        self.tiles[0][5].piece = Bishop('black')
+        self.tiles[0][6].piece = Knight('black')
+        self.tiles[0][7].piece = Rook('black')
 
-        self.squares[7][0] = Rook('white')
-        self.squares[7][1] = Knight('white')
-        self.squares[7][2] = Bishop('white')
-        self.squares[7][3] = Queen('white')
-        self.squares[7][4] = King('white')
-        self.squares[7][5] = Bishop('white')
-        self.squares[7][6] = Knight('white')
-        self.squares[7][7] = Rook('white')
+        self.tiles[7][0].piece = Rook('white')
+        self.tiles[7][1].piece = Knight('white')
+        self.tiles[7][2].piece = Bishop('white')
+        self.tiles[7][3].piece = Queen('white')
+        self.tiles[7][4].piece = King('white')
+        self.tiles[7][5].piece = Bishop('white')
+        self.tiles[7][6].piece = Knight('white')
+        self.tiles[7][7].piece = Rook('white')
 
     def get_piece_on_coordinates(self, coordinates):
         col = ord(coordinates[0]) - ord('a')
         row = self.width - int(coordinates[1])
 
-        return self.squares[row][col]
+        return self.tiles[row][col].piece
