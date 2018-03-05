@@ -1,3 +1,4 @@
+from chess.player.color import Color
 from chess.tile import Tile
 from chess.pieces.bishop import Bishop
 from chess.pieces.king import King
@@ -20,23 +21,23 @@ class Board:
         self._place_pieces()
 
     def _place_pieces(self):
-        self.tiles[0][0].piece = Rook('black')
-        self.tiles[0][1].piece = Knight('black')
-        self.tiles[0][2].piece = Bishop('black')
-        self.tiles[0][3].piece = Queen('black')
-        self.tiles[0][4].piece = King('black')
-        self.tiles[0][5].piece = Bishop('black')
-        self.tiles[0][6].piece = Knight('black')
-        self.tiles[0][7].piece = Rook('black')
+        self.tiles[0][0].piece = Rook(Color.BLACK)
+        self.tiles[0][1].piece = Knight(Color.BLACK)
+        self.tiles[0][2].piece = Bishop(Color.BLACK)
+        self.tiles[0][3].piece = Queen(Color.BLACK)
+        self.tiles[0][4].piece = King(Color.BLACK)
+        self.tiles[0][5].piece = Bishop(Color.BLACK)
+        self.tiles[0][6].piece = Knight(Color.BLACK)
+        self.tiles[0][7].piece = Rook(Color.BLACK)
 
-        self.tiles[7][0].piece = Rook('white')
-        self.tiles[7][1].piece = Knight('white')
-        self.tiles[7][2].piece = Bishop('white')
-        self.tiles[7][3].piece = Queen('white')
-        self.tiles[7][4].piece = King('white')
-        self.tiles[7][5].piece = Bishop('white')
-        self.tiles[7][6].piece = Knight('white')
-        self.tiles[7][7].piece = Rook('white')
+        self.tiles[7][0].piece = Rook(Color.WHITE)
+        self.tiles[7][1].piece = Knight(Color.WHITE)
+        self.tiles[7][2].piece = Bishop(Color.WHITE)
+        self.tiles[7][3].piece = Queen(Color.WHITE)
+        self.tiles[7][4].piece = King(Color.WHITE)
+        self.tiles[7][5].piece = Bishop(Color.WHITE)
+        self.tiles[7][6].piece = Knight(Color.WHITE)
+        self.tiles[7][7].piece = Rook(Color.WHITE)
 
     def get_piece_on_coordinates(self, coordinates):
         col = ord(coordinates[0]) - ord('a')

@@ -1,4 +1,5 @@
 from chess.pieces.piece import Piece
+from chess.player.color import Color
 
 
 class Queen(Piece):
@@ -12,4 +13,4 @@ class Queen(Piece):
         return d_x == d_y or min(d_x, d_y) == 0
 
     def __str__(self):
-        return '\u2655' if self.color == 'white' else '\u265B'
+        return '\u2655' if self.color == Color.WHITE else '\u265B'

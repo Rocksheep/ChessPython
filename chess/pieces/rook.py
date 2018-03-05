@@ -1,4 +1,5 @@
 from chess.pieces.piece import Piece
+from chess.player.color import Color
 
 
 class Rook(Piece):
@@ -9,4 +10,4 @@ class Rook(Piece):
         return min(abs(d_x), abs(d_y)) == 0
 
     def __str__(self):
-        return '\u2656' if self.color == 'white' else '\u265C'
+        return '\u2656' if self.color == Color.WHITE else '\u265C'

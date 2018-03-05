@@ -24,3 +24,9 @@ class KnightTest(unittest.TestCase):
         self.assertFalse(knight.is_valid_move('c4', 'a2'))
         self.assertFalse(knight.is_valid_move('c4', 'a4'))
         self.assertFalse(knight.is_valid_move('c4', 'g6'))
+
+    def test_it_has_the_proper_strong_representation_for_its_color(self):
+        b_knight = Knight(Color.BLACK)
+        self.assertEqual(str(b_knight), '\u265E')
+        w_knight = Knight(Color.WHITE)
+        self.assertEqual(str(w_knight), '\u2658')

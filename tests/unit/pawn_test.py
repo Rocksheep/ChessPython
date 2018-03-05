@@ -37,3 +37,9 @@ class PawnTest(unittest.TestCase):
         self.assertFalse(w_pawn.is_valid_move('c3', 'b1'))
         self.assertFalse(w_pawn.is_valid_move('c1', 'b1'))
         self.assertFalse(w_pawn.is_valid_move('a1', 'b1'))
+
+    def test_it_has_the_proper_strong_representation_for_its_color(self):
+        b_pawn = Pawn(Color.BLACK)
+        self.assertEqual(str(b_pawn), '\u265F')
+        w_pawn = Pawn(Color.WHITE)
+        self.assertEqual(str(w_pawn), '\u2659')

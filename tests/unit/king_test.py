@@ -27,3 +27,9 @@ class KingTest(unittest.TestCase):
         self.assertFalse(king.is_valid_move('c4', 'b8'))
         self.assertFalse(king.is_valid_move('c4', 'h2'))
         self.assertFalse(king.is_valid_move('c4', "c2"))
+
+    def test_it_has_the_proper_strong_representation_for_its_color(self):
+        b_king = King(Color.BLACK)
+        self.assertEqual(str(b_king), '\u265A')
+        w_king = King(Color.WHITE)
+        self.assertEqual(str(w_king), '\u2654')

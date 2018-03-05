@@ -19,4 +19,4 @@ class Pawn(Piece):
         return d_y == -1 and abs(d_x) == 0
 
     def __str__(self):
-        return '\u2659' if self.color == 'white' else '\u265F'
+        return '\u2659' if self.color == Color.WHITE else '\u265F'
