@@ -1,3 +1,4 @@
+from chess.pieces.pawn import Pawn
 from chess.player.color import Color
 from chess.tile import Tile
 from chess.pieces.bishop import Bishop
@@ -29,6 +30,10 @@ class Board:
         self.tiles[0][5].piece = Bishop(Color.BLACK)
         self.tiles[0][6].piece = Knight(Color.BLACK)
         self.tiles[0][7].piece = Rook(Color.BLACK)
+
+        for i in range(self.width):
+            self.tiles[1][i].piece = Pawn(Color.BLACK)
+            self.tiles[6][i].piece = Pawn(Color.WHITE)
 
         self.tiles[7][0].piece = Rook(Color.WHITE)
         self.tiles[7][1].piece = Knight(Color.WHITE)
