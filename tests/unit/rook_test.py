@@ -12,7 +12,9 @@ class RookTest(unittest.TestCase):
     def test_it_validates_the_move(self):
         piece = Rook('black')
 
-        self.assertTrue(piece.is_valid_move('a1', 'a8'))
-        self.assertFalse(piece.is_valid_move('a1', 'b8'))
-        self.assertTrue(piece.is_valid_move('a1', 'h1'))
-        self.assertFalse(piece.is_valid_move('a1', 'h2'))
+        self.assertTrue(piece.is_valid_move('c4', 'c8'))
+        self.assertTrue(piece.is_valid_move('c4', 'f4'))
+        self.assertTrue(piece.is_valid_move('c4', 'c1'))
+        self.assertTrue(piece.is_valid_move('c4', 'a4'))
+        self.assertFalse(piece.is_valid_move('c4', 'a2'))
+        self.assertFalse(piece.is_valid_move('c4', 'h2'))

@@ -1,4 +1,4 @@
-from chess.Tile import Tile
+from chess.tile import Tile
 from chess.pieces.bishop import Bishop
 from chess.pieces.king import King
 from chess.pieces.knight import Knight

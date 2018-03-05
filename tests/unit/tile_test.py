@@ -1,6 +1,6 @@
 import unittest
 
-from chess.Tile import Tile
+from chess.tile import Tile
 from chess.pieces.rook import Rook
 
 
