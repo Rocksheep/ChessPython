@@ -1,16 +1,17 @@
 import unittest
 
 from chess.pieces.knight import Knight
+from chess.player.color import Color
 
 
 class KnightTest(unittest.TestCase):
 
     def test_it_can_be_instantiated(self):
-        knight = Knight('black')
+        knight = Knight(Color.BLACK)
         self.assertIsInstance(knight, Knight)
 
     def test_it_can_validate_moves(self):
-        knight = Knight('black')
+        knight = Knight(Color.BLACK)
         self.assertTrue(knight.is_valid_move('c4', 'd6'))
         self.assertTrue(knight.is_valid_move('c4', 'e5'))
         self.assertTrue(knight.is_valid_move('c4', 'e3'))

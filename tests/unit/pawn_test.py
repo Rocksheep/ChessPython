@@ -2,16 +2,17 @@ import unittest
 
 from chess.pieces.pawn import Pawn
 from chess.pieces.piece import Piece
+from chess.player.color import Color
 
 
 class PawnTest(unittest.TestCase):
 
     def test_it_can_be_instantiated(self):
-        pawn = Pawn('black')
+        pawn = Pawn(Color.BLACK)
         self.assertIsInstance(pawn, Pawn)
 
     def test_it_can_validate_moves(self):
-        b_pawn = Pawn('black')
+        b_pawn = Pawn(Color.BLACK)
         self.assertTrue(b_pawn.is_valid_move('b7', 'b6'))
         self.assertTrue(b_pawn.is_valid_move('b7', 'b5'))
         self.assertTrue(b_pawn.is_valid_move('a7', 'a5'))
@@ -24,7 +25,7 @@ class PawnTest(unittest.TestCase):
         self.assertFalse(b_pawn.is_valid_move('b7', 'c8'))
         self.assertFalse(b_pawn.is_valid_move('b7', 'c7'))
 
-        w_pawn = Pawn('white')
+        w_pawn = Pawn(Color.WHITE)
         self.assertTrue(w_pawn.is_valid_move('b2', 'b3'))
         self.assertTrue(w_pawn.is_valid_move('b2', 'b4'))
         self.assertTrue(w_pawn.is_valid_move('a2', 'a4'))
